@@ -1,38 +1,69 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <Nullable>enable</Nullable>
+    <TargetFrameworks>net20;net35;net40;net45;netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>APIVerve.API.ChuckNorrisJokes</Title>
-    <Version>1.0.0</Version>
+    <Version>1.0.5</Version>
     <Authors>APIVerve</Authors>
     <Company>APIVerve</Company>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <IncludeContentInPack>true</IncludeContentInPack>
+
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <PackageReadmeFile>Readme.md</PackageReadmeFile>
-    <PackageProjectUrl>https://apiverve.com/marketplace/api/chucknorris</PackageProjectUrl>
+    <PackageProjectUrl>https://apiverve.com/?utm_source=nuget</PackageProjectUrl>
     <SignAssembly>False</SignAssembly>
     <Description>Chuck Norris Jokes is a simple tool for getting Chuck Norris jokes. It returns a random Chuck Norris joke.</Description>
-    <RepositoryUrl>https://github.com/apiverve/chucknorris-NET</RepositoryUrl>
+    <RepositoryUrl>https://github.com/apiverve/chucknorris.NET-API</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>chuck norris; chuck norris jokes; chuck norris joke; chuck norris joke api; chuck norris jokes api; chuck norris joke tool; chuck norris jokes tool; chuck norris joke software; chuck norris jokes software; chuck norris joke service; chuck norris jokes service; chuck norris joke library; chuck norris jokes library; chuck norris joke sdk; chuck norris jokes sdk; chuck norris joke code; chuck norris jokes code; chuck norris joke script; chuck norris jokes script; chuck norris joke program; chuck norris jokes program; chuck norris joke application; chuck norris jokes application; chuck norris joke app; chuck norris jokes app; chuck norris joke tool; chuck norris jokes tool; chuck norris joke utility; chuck norris jokes utility; chuck norris joke helper; chuck norris jokes helper; chuck norris helper tool; chuck norris jokes helper tool; chuck norris helper software; chuck norris jokes helper software; chuck norris helper service; chuck norris jokes helper service; chuck norris helper library; chuck norris jokes helper library; chuck norris helper sdk; chuck norris jokes helper sdk; chuck norris helper code; chuck norris jokes helper code; chuck norris helper script; chuck norris jokes helper script; chuck norris helper program; chuck norris jokes helper program; chuck norris helper application; chuck norris jokes helper application; chuck norris helper app; chuck norris jokes helper app; chuck norris helper tool; chuck norris jokes helper tool; chuck norris helper utility; chuck norris jokes helper utility; chuck norris helper; chuck norris jokes helper</PackageTags>
+    <PackageTags>chuck norris; chuck norris jokes; chuck norris joke; chuck norris joke api; chuck norris jokes api</PackageTags>
     <Copyright>©2024 APIVerve. All Rights Reserved</Copyright>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <PackageIcon>favicon@128.png</PackageIcon>
+    <BaseOutputPath>.\bin</BaseOutputPath>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <PackageId>APIVerve.API.ChuckNorrisJokes</PackageId>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <None Remove="LICENSE" />
+    <None Remove="Readme.md" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="LICENSE">
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Media\favicon@128.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Update="Readme.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>
