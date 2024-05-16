@@ -80,7 +80,7 @@ var response = apiClient.Execute();
 if(response.error != null) {
 	Console.WriteLine(response.error);
 } else {
-    var jsonResponse = JsonConvert.SerializeObject(response.data, Newtonsoft.Json.Formatting.Indented);
+    var jsonResponse = JsonConvert.SerializeObject(response, Newtonsoft.Json.Formatting.Indented);
     Console.WriteLine(jsonResponse);
 }
 ```
@@ -92,7 +92,7 @@ if(response.error != null) {
   "status": "ok",
   "error": null,
   "data": {
-    "joke": "Chuck Norris Doesn't Need A Minute To Win It"
+    "joke": "Chuck Norris Beard Has It's Own Impressive Resume."
   }
 }
 ```
